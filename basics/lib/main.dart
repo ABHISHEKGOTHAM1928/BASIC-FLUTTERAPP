@@ -2,8 +2,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: Home(),
+  runApp(MaterialApp(
+    theme: ThemeData(
+      scaffoldBackgroundColor: Color.fromARGB(255, 244, 233, 210),
+    ),
+    debugShowCheckedModeBanner: false,
+    home: const Home(),
   ));
 }
 
@@ -13,6 +17,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
         //========================================================================
         // appBar: AppBar(
         //   title: const Text("personal portfolio"),
@@ -34,7 +39,7 @@ class Home extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
-                  color: Colors.amber,
+                  color: Color.fromARGB(255, 17, 13, 2),
                 ),
               ),
               //========================================================================
@@ -117,6 +122,7 @@ class Home extends StatelessWidget {
                     SizedBox(
                       height: 2,
                     ),
+
                     Row(
                       children: <Widget>[
                         Icon(Icons.mail_outline_sharp, size: 30),
@@ -186,8 +192,11 @@ class Home extends StatelessWidget {
                 height: 30,
               ),
               const Text(
-                "About me",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                "About",
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "fonts/static/RobotoSlab-ExtraBold.ttf"),
               ),
               //=================================================================================================================================
               //to place pictures
@@ -204,75 +213,86 @@ class Home extends StatelessWidget {
               //   ],
               // ),
               //=================================================================================================================================
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: 320,
-                    height: 180,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Image.asset(
-                      'assets/semiformal.jpeg',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Text(
-                        "This is GOTHAM ABHISHEK REDDY, Currently working as an Intern at KTern.ai, a product of KAAR TECHNOLOGIES LTD.",
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          fontSize: 15, fontWeight: FontWeight.bold,
 
-                          fontFamily: 'RobotoSlab',
-                          // fontVariations: <ui.FontVariation>[ui.FontVariation('wght', 900.0)]
-                        )),
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(left: 15.0,right: 20),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: 320,
+                      height: 180,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Image.asset(
+                        'assets/semiformal.jpeg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Text(
+                          "This is GOTHAM ABHISHEK REDDY, Currently working as an Intern at KTern.ai, a product of KAAR TECHNOLOGIES LTD.",
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold,
+
+                            fontFamily: 'RobotoSlab',
+                            // fontVariations: <ui.FontVariation>[ui.FontVariation('wght', 900.0)]
+                          )),
+                    ),
+                  ],
+                ),
               ),
 
               //=================================================================================================================================
               //for second image
-              Column(
-                children: <Widget>[
-                  Container(
-                    width: 320,
-                    height: 250,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(8)),
-                    child: Image.asset('assets/informal.jpeg'),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Text(
-                      "being an intern at Ktern, for 2 months, I had completed many assignments and one final assignment, the assignment is about to design a website.",
-                      textAlign: TextAlign.justify,
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.w900),
+              Padding(
+                padding: const EdgeInsets.only(left: 15.0, right: 20.0),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: 320,
+                      height: 250,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.white,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Image.asset('assets/informal.jpeg'),
                     ),
-                  )
-                ],
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Text(
+                        "being an intern at Ktern, for 2 months, I had completed many assignments and one final assignment, the assignment is about to design a website.",
+                        textAlign: TextAlign.justify,
+                        style:
+                            TextStyle(fontSize: 15, fontWeight: FontWeight.w900),
+                      ),
+                    )
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 20,
               ),
 
-              Text("developed by @gotham Abhishek")
+              Text("developed by @Gotham Abhishek"),
+
+              const SizedBox(
+                height: 20,
+              ),
 
               //=================================================================================================================================
             ]),
